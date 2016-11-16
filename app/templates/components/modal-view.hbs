@@ -1,0 +1,22 @@
+<div class="modal">
+	<div class="modal__background" {{ action 'closeModal'}}></div>
+	<div class="modal__container">
+		<p class="form-error">{{formError}}</p>
+		<div class="modal__top-bar">
+			{{#if isEditingDescription}}
+				{{input value=card.description placeholder="Edit card description" class="modal__description-input"}}
+				<button	{{action 'toggleIsEditingDescription'}}>Done</button>
+			{{else}}
+				<h4 class="modal__card-description">
+					{{card.description}}
+					<i {{ action 'toggleIsEditingDescription'}} class="fa fa-pencil"></i>
+				</h4>
+			{{/if}}
+			<div class="modal__control-buttons">
+				<button {{ action 'closeModal'}}>Close</button>
+				<button {{action 'delete' card.id}}>Delete</button>
+			</div>
+		</div>
+		{{textarea value=card.content class="modal__content-input"}}
+	</div>
+</div>

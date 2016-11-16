@@ -1,0 +1,30 @@
+<div class="list-item">
+	<p class="form-error">{{list.errors.listError}}</p>
+	<div class="list-item__name">
+	{{#if isEditingName}}
+		<form {{action 'toggleIsEditingName' on="submit"}}>
+			{{input value=list.name placeholder="Name your list" class="list-item__name-input"}}
+			<button	{{action 'toggleIsEditingName'}}>Done</button>
+		</form>
+	{{else}}
+		<h2>{{list.name}} <i {{ action 'toggleIsEditingName'}} class="fa fa-pencil"></i></h2>
+		
+	{{/if}}
+	</div>
+	<ul class="card-container">
+		{{#each list.cards as |card|}}
+			<div class="card-container__card">
+				{{card-item card=card list=list deleteCard=(action 'deleteCard')}}
+			</div>
+		{{/each}}
+	</ul>
+	{{#if isAddingCard}}
+		<form class="list-item__new-card">
+			<p class="form-error">{{list.errors.cardError}}</p>
+			{{input value=newCardDescription placeholder="Card description"}}
+			<button	{{action 'addCard'}}>Done</button>
+		</form>
+	{{else}}
+		<button class="list-item__new-card" {{action 'toggleIsAddingCard'}}> Add an item... </button>
+	{{/if}}
+</div>

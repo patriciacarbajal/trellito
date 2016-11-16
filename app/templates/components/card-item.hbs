@@ -1,0 +1,8 @@
+{{#if modalOpen}}
+	{{modal-view card=card modalOpen=modalOpen list=list deleteCard=(action 'deleteCard')}}
+{{/if}}
+<h4 class="card-modal-link" {{action 'toggleModalOpen'}}>
+	{{card.description}}
+</h4>
+
+	

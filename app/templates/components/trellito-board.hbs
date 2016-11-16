@@ -1,0 +1,10 @@
+<div class="trellito-board">
+	<ul class="list-container">
+		{{#each listItems as |list|}}
+			{{list-item list=list cards=list.cards}}
+		{{/each}}
+		<button class="new-list-button" {{ action 'addList' }}> <i class="fa fa-plus"></i> New list </button>
+	</ul>
+
+	
+</div>

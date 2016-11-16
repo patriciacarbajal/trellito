@@ -1,0 +1,141 @@
+body {
+	font-family: 'Raleway', sans-serif;
+
+	header {
+		background: white;
+		color: black;
+		text-align: center;
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		left: 10px;
+	}
+
+}
+
+.trellito-board {
+	margin-top: 150px;
+
+	button {
+		background: white;
+		border-color: black;
+		height: 20px;
+    	border-radius: 5px;
+
+    	&.new-list-button {
+    		margin-left: 20px;
+    		width: 80px;
+    	}
+	}
+
+    .form-error {
+    	color: red;
+    	font-size: 12px;
+    	margin: 0;
+    }
+
+	.list-container {
+		display: flex;
+		flex-wrap: nowrap;
+
+		.list-item {
+			background: white;
+			width: 200px;
+			margin: 0 0 20px 20px;
+			padding: 20px;
+			border: 5px solid black;
+    		border-radius: 10px;
+
+			&__name {
+				color: black;
+				text-align: center;
+				height: auto;
+			    padding-bottom: 10px;
+			    border-bottom: 5px solid black;
+			    margin-right: -20px;
+			    margin-left: -20px;
+
+				h2 {
+					margin: 0;
+
+					.fa-pencil {
+						font-size: small;
+						vertical-align: middle;
+					}
+				}
+			}
+
+			&__name-input {
+				height: 30px;
+			    font-size: 20px;
+			    margin-top: 7px;
+			    width: 95%;
+			}
+
+			&__new-card {
+				margin-top: 30px;
+			}
+		}
+
+		.card-container {
+			padding: 0;
+			margin-top: 20px;
+
+			&__card {
+				width: 95%;
+				padding-left: 10px;
+				border: 1px solid black;
+				margin: auto;
+				margin-top: 5px;
+				border-radius: 5px;
+
+				.card-modal-link {
+					margin: 10px;
+				}
+			}
+		}
+	}
+
+	
+	.modal {
+		&__background {
+			position: absolute;
+		    top: 0;
+		    bottom: 0;
+		    right: 0;
+		    left: 0;
+			background: gray;
+			opacity: .5;
+		}
+
+		&__container {
+			position: absolute;
+		    left: 25%;
+		    top: 25%;
+		    padding: 20px;
+		    width: 50%;
+		    background: white;
+		    border: 1px solid black;
+		    z-index: 10;
+		}
+	   
+    	&__card-description {
+    		margin: 0 0 20px;
+    	}
+
+	    &__description-input {
+	    	margin-bottom: 20px;
+		}
+
+		&__content-input {
+			width: 100%;
+    		height: 200px;
+		}
+
+	    &__control-buttons {
+	    	position: absolute;
+	    	right: 10px;
+	    	top: 10px;
+	    }
+	}
+}
